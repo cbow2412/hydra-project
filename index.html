@@ -1,246 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Hydra - Queue Management System</title>
-<style>
-    /* Reset all default spacing */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Sonoma - Revolutionizing Service Delivery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Global Styles */
-    body {
-        font-family: 'Segoe UI', Arial, sans-serif;
-        background: #fff; /* white background */
-        color: #000; /* black text */
-        line-height: 1.6;
-        scroll-behavior: smooth;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fff;
+            color: #000;
+            overflow-x: hidden;
+        }
 
-    /* Header */
-    header {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: #000; /* black header */
-        color: #fff;
-        text-align: center;
-        padding: 0 20px;
-    }
-    header h1 {
-        font-size: 3em;
-        margin-bottom: 20px;
-        font-weight: bold;
-    }
-    header p {
-        font-size: 1.2em;
-        font-style: italic;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    /* Navigation */
-    nav {
-        background: #111;
-        padding: 15px 0;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s;
-        padding: 5px 10px;
-    }
-    nav a:hover {
-        color: #ccc;
-    }
+        /* Header */
+        .header {
+            background: #000;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* Sections */
-    section {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 40px 20px;
-    }
-    section h2 {
-        margin-bottom: 20px;
-        font-size: 2em;
-        font-weight: bold;
-        text-align: center;
-        border-bottom: 2px solid #000;
-        padding-bottom: 10px;
-    }
-    section p, section li, section ol li {
-        font-size: 1.1em;
-        margin-bottom: 15px;
-    }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* Cards */
-    .card {
-        background: #fff;
-        color: #000;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        padding: 30px;
-        max-width: 900px;
-        width: 100%;
-        margin: 20px 0;
-    }
-    .tech-card { border-left: 5px solid #000; }
-    .example-card { border-left: 5px solid #555; }
-    .investor-card { border-left: 5px solid #222; }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+        }
 
-    /* Images */
-    .project-image {
-        text-align: center;
-        margin: 30px 0;
-    }
-    .project-image img {
-        max-width: 90%;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    .project-image p {
-        font-style: italic;
-        margin-top: 10px;
-        font-size: 1.1em;
-        text-align: center;
-    }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-    /* Canvas Graph */
-    .canvas-graph {
-        width: 100%;
-        max-width: 900px;
-        height: 300px;
-        background: #f4f4f4;
-        border: 1px solid #ddd;
-        margin: 20px 0;
-    }
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+        }
 
-    /* Footer */
-    footer {
-        background: #000;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-    }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-        header h1 { font-size: 2.2em; }
-        section h2 { font-size: 1.5em; }
-        section { padding: 20px 10px; }
-    }
-</style>
-<script>
-function drawGraph() {
-    const canvas = document.getElementById('visitorGraph');
-    if(canvas.getContext){
-        const ctx = canvas.getContext('2d');
-        ctx.fillStyle = '#000';
-        ctx.fillRect(50, 50, 100, 200);
-        ctx.fillStyle = '#000';
-        ctx.font = '16px Arial';
-        ctx.fillText('Visitors (30k/day)', 60, 40);
-    }
-}
-window.onload = drawGraph;
-</script>
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #000;
+            color: #fff;
+            padding-top: 100px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 2px solid #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .white-bg {
+            background: #fff;
+            color: #000;
+        }
+
+        .black-bg {
+            background: #000;
+            color: #fff;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: #fff;
+            color: #000;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #000;
+            transition: transform 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #000;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-start;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: #fff;
+            color: #000;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 45%;
+            border: 1px solid #000;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: #000;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+
+        /* Architecture */
+        .arch-diagram {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .arch-component {
+            background: #fff;
+            color: #000;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+
+        .component-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
+            .timeline::before { left: 20px; }
+            .timeline-content { width: calc(100% - 50px); margin-left: 50px; }
+            .timeline-item { justify-content: flex-start !important; flex-direction: row !important; }
+            .timeline-dot { left: 20px; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>Project Hydra 🚀</h1>
-    <p>Revolutionizing Queue Management in Kenya & Beyond</p>
+<header class="header">
+    <nav class="nav container">
+        <div class="logo">Project Sonoma</div>
+        <ul class="nav-links">
+            <li><a href="#problem">Problem</a></li>
+            <li><a href="#solution">Solution</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#investors">Investors</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<nav>
-    <a href="#mission">Mission</a>
-    <a href="#technology">Technology</a>
-    <a href="#goals">Goals</a>
-    <a href="#simplicity">Simplicity</a>
-    <a href="#advantages">Advantages</a>
-    <a href="#example">Example</a>
-    <a href="#investor">Investors</a>
-</nav>
-
-<section id="mission" class="card">
-    <h2>Our Mission</h2>
-    <p><strong>Hydra Technologies Ltd</strong> aims to eliminate daily queue frustrations. We transform service access into a seamless experience across Kenya and Africa.</p>
-</section>
-
-<section id="technology" class="card tech-card">
-    <h2>Technology Stack</h2>
-    <ul>
-        <li><strong>IoT Edge Layer:</strong> Raspberry Pi devices track real-time queue activity.</li>
-        <li><strong>AWS Cloud Backend:</strong> DynamoDB, Redis, Lambda, SageMaker, MQTT Broker.</li>
-        <li><strong>Frontend:</strong> Mobile-friendly website, live queue updates, M-PESA integration.</li>
-    </ul>
-</section>
-
-<section id="goals" class="card">
-    <h2>Goals</h2>
-    <p><strong>Short-Term:</strong> Pilot at Kahawa Sukari Kianjokoma Plaza with 10,000 users/day.</p>
-    <p><strong>Long-Term:</strong> Scale to 30,000+ users/day across Kenya and Africa.</p>
-    <canvas id="visitorGraph" class="canvas-graph"></canvas>
-</section>
-
-<section id="simplicity" class="card">
-    <h2>Simplicity</h2>
-    <p>Check queue → book → arrive. Clean interface, real-time updates, inclusive for all users.</p>
-</section>
-
-<section id="advantages" class="card">
-    <h2>Advantages</h2>
-    <ul>
-        <li>Save 2-4 hours daily per user</li>
-        <li>Revenue generation for institutions</li>
-        <li>Data-driven insights</li>
-        <li>Inclusive & secure</li>
-        <li>Scalable to 1,000+ institutions</li>
-    </ul>
-</section>
-
-<section id="example" class="card example-card">
-    <h2>Example: Jane</h2>
-    <ol>
-        <li>Checks queue: “50 people, 2.5 hrs wait”</li>
-        <li>Pays KSh 35 via M-PESA, books ticket</li>
-        <li>Notification: “Your turn at 11:30 AM”</li>
-        <li>Arrives, served in 5 minutes — saves 2.5 hours</li>
-    </ol>
-    <div class="project-image">
-        <img src="IMG_235108.jpg" alt="Jane's journey visual">
-        <p><em>This picture simplifies the entire project ⭐⭐⭐⭐⭐</em></p>
-    </div>
-    <div class="project-image">
-        <img src="IMG_234647.jpg" alt="Hydra project diagram">
-        <p><em>Visual overview of Hydra project ⭐⭐⭐⭐⭐</em></p>
+<section class="hero">
+    <div class="hero-content container">
+        <h1>Project Sonoma</h1>
+        <p>Revolutionizing Service Delivery Through Intelligent Queue Management</p>
+        <a href="#solution" class="cta-button">Discover the Revolution</a>
     </div>
 </section>
 
-<section id="investor" class="card investor-card">
-    <h2>For Investors</h2>
-    <p>Market potential: 30,000 daily visitors to 1,000+ Kenyan institutions. Africa-wide potential: 100M+ daily users.</p>
-    <p>Revenue model: KSh 35 fee per booking, scalable across institutions. Hardware cost per site: KSh 15,000.</p>
-    <p>Team & Traction: Solo founder (Morgan), ongoing AWS Activate submission, partnership discussions with Equity, Safaricom, Co-op.</p>
-    <p>Contact: 📧 hydra.tech.ke@gmail.com | 📞 +254 743 261 057</p>
+<section class="section white-bg" id="problem">
+    <div class="container">
+        <h2 class="section-title">The Problem We're Solving</h2>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon">⏰</div>
+                <h3>Time Wastage</h3>
+                <p>Kenyans waste 2-4 hours daily in queues. That's 730-1460 hours annually per person.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">😤</div>
+                <h3>Frustration</h3>
+                <p>Uncertainty about wait times and crowded areas creates negative experiences.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">💰</div>
+                <h3>Economic Impact</h3>
+                <p>Lost productivity from queue waiting costs Kenya's economy billions annually.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">🏢</div>
+                <h3>Institutional Inefficiency</h3>
+                <p>Service providers struggle with crowd management and unpredictable customer flow patterns.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-<footer>
-    &copy; 2025 Hydra Technologies Ltd. All rights reserved.
+<section class="section white-bg" id="solution">
+    <div class="container">
+        <h2 class="section-title">The Sonoma Solution</h2>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon">📱</div>
+                <h3>Digital Queue Booking</h3>
+                <p>Customers book appointments via mobile app/website. Pay KSH 35 via M-Pesa for guaranteed slot.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">🥧</div>
+                <h3>Raspberry Pi Integration</h3>
+                <p>Industrial-grade Pi devices integrate with existing queue systems seamlessly.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">⚡</div>
+                <h3>Real-Time Coordination</h3>
+                <p>Live queue updates, estimated wait times, and smart arrival notifications.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">🎯</div>
+                <h3>Perfect Timing</h3>
+                <p>Customers arrive exactly when needed, reducing physical waiting by 85%.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section white-bg" id="architecture">
+    <div class="container">
+        <h2 class="section-title">AWS-Powered Architecture</h2>
+        <div class="arch-diagram">
+            <div class="arch-component">
+                <div class="component-icon">📱</div>
+                <h3>Mobile App</h3>
+            </div>
+            <div class="arch-component">
+                <div class="component-icon">🌐</div>
+                <h3>API Gateway</h3>
+            </div>
+            <div class="arch-component">
+                <div class="component-icon">⚡</div>
+                <h3>Lambda Functions</h3>
+            </div>
+            <div class="arch-component">
+                <div class="component-icon">💾</div>
+                <h3>DynamoDB</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    &copy; 2025 Project Sonoma. All Rights Reserved.
 </footer>
 
 </body>
