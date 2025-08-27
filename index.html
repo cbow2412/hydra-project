@@ -3,96 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Hydra - Revolutionizing Queue Management</title>
+<title>Project Hydra - Queue Management System</title>
 <style>
+    /* Reset all default spacing */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     /* Global Styles */
     body {
         font-family: 'Segoe UI', Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #e0f7fa, #f0f4f8);
-        color: #1a2e44;
+        background: #fff; /* white background */
+        color: #000; /* black text */
         line-height: 1.6;
+        scroll-behavior: smooth;
     }
 
     /* Header */
     header {
-        background: linear-gradient(135deg, #007bff, #00c6ff);
-        color: white;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #000; /* black header */
+        color: #fff;
         text-align: center;
-        padding: 100px 20px;
-        position: relative;
-        overflow: hidden;
+        padding: 0 20px;
     }
     header h1 {
         font-size: 3em;
-        margin: 0;
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        margin-bottom: 20px;
+        font-weight: bold;
     }
     header p {
-        font-size: 1.3em;
-        margin: 10px 0;
-    }
-    .hero-globe {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background: url('IMG_234647.jpg') center/cover no-repeat;
-        margin: 20px auto;
-        animation: spin 20s linear infinite;
-    }
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        font-size: 1.2em;
+        font-style: italic;
     }
 
     /* Navigation */
     nav {
-        background: #0056b3;
-        padding: 15px;
-        text-align: center;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        background: #111;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
     nav a {
-        color: white;
-        margin: 0 15px;
+        color: #fff;
         text-decoration: none;
         font-weight: bold;
         transition: 0.3s;
+        padding: 5px 10px;
     }
     nav a:hover {
-        color: #ffca28;
+        color: #ccc;
     }
 
     /* Sections */
     section {
-        padding: 50px 20px;
-        max-width: 1200px;
-        margin: 0 auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
     }
-    h2 {
-        color: #007bff;
-        text-align: center;
-        border-bottom: 2px solid #007bff;
-        padding-bottom: 10px;
+    section h2 {
         margin-bottom: 20px;
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 2px solid #000;
+        padding-bottom: 10px;
+    }
+    section p, section li, section ol li {
+        font-size: 1.1em;
+        margin-bottom: 15px;
     }
 
+    /* Cards */
     .card {
-        background: white;
+        background: #fff;
+        color: #000;
         border-radius: 12px;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         padding: 30px;
+        max-width: 900px;
+        width: 100%;
         margin: 20px 0;
-        transition: transform 0.3s;
     }
-    .card:hover { transform: translateY(-5px); }
-
-    .tech-card { background: #e9f7ff; border-left: 5px solid #007bff; }
-    .example-card { background: #fff3e0; border-left: 5px solid #ff9800; }
-    .investor-card { background: #f1f8e9; border-left: 5px solid #4caf50; }
-
-    ul, ol { padding-left: 20px; }
+    .tech-card { border-left: 5px solid #000; }
+    .example-card { border-left: 5px solid #555; }
+    .investor-card { border-left: 5px solid #222; }
 
     /* Images */
     .project-image {
@@ -101,50 +109,47 @@
     }
     .project-image img {
         max-width: 90%;
-        border-radius: 12px;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     .project-image p {
         font-style: italic;
         margin-top: 10px;
         font-size: 1.1em;
+        text-align: center;
     }
 
     /* Canvas Graph */
     .canvas-graph {
         width: 100%;
+        max-width: 900px;
         height: 300px;
-        background: #fff;
+        background: #f4f4f4;
         border: 1px solid #ddd;
         margin: 20px 0;
     }
 
     /* Footer */
     footer {
-        background: #0056b3;
-        color: white;
+        background: #000;
+        color: #fff;
         text-align: center;
         padding: 20px;
-        margin-top: 40px;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-        header h1 { font-size: 2em; }
+        header h1 { font-size: 2.2em; }
+        section h2 { font-size: 1.5em; }
         section { padding: 20px 10px; }
-        nav a { margin: 0 10px; }
     }
-
-    /* Blink effect */
-    .blink { animation: blink 1s infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
 </style>
 <script>
 function drawGraph() {
     const canvas = document.getElementById('visitorGraph');
     if(canvas.getContext){
         const ctx = canvas.getContext('2d');
-        ctx.fillStyle = '#007bff';
+        ctx.fillStyle = '#000';
         ctx.fillRect(50, 50, 100, 200);
         ctx.fillStyle = '#000';
         ctx.font = '16px Arial';
@@ -158,64 +163,85 @@ window.onload = drawGraph;
 
 <header>
     <h1>Project Hydra 🚀</h1>
-    <p>Revolutionizing Queue Management in Kenya & Beyond ✨</p>
-    <div class="hero-globe"></div>
+    <p>Revolutionizing Queue Management in Kenya & Beyond</p>
 </header>
 
 <nav>
-    <a href="#mission">Mission 🌟</a>
-    <a href="#technology">Technology 💻</a>
-    <a href="#goals">Goals 🎯</a>
-    <a href="#simplicity">Simplicity 🌱</a>
-    <a href="#advantages">Advantages ✅</a>
-    <a href="#example">Real Example 👩‍💼</a>
-    <a href="#investor">For Investors 💰</a>
+    <a href="#mission">Mission</a>
+    <a href="#technology">Technology</a>
+    <a href="#goals">Goals</a>
+    <a href="#simplicity">Simplicity</a>
+    <a href="#advantages">Advantages</a>
+    <a href="#example">Example</a>
+    <a href="#investor">Investors</a>
 </nav>
 
 <section id="mission" class="card">
-    <h2>Our Mission 🌍</h2>
-    <p><strong>At Hydra Technologies Ltd</strong>, a Nairobi-based startup, <em>our mission is to eradicate the daily frustration of long queues ⭐⭐⭐⭐⭐</em>. Whether at Huduma Centres, Safaricom Shops, hospitals, or banks, people lose 1-5 hours daily. We aim to transform service access into a seamless, inclusive experience, starting in Kenya and scaling across Africa.</p>
+    <h2>Our Mission</h2>
+    <p><strong>Hydra Technologies Ltd</strong> aims to eliminate daily queue frustrations. We transform service access into a seamless experience across Kenya and Africa.</p>
 </section>
 
 <section id="technology" class="card tech-card">
-    <h2>Our Technology Stack 🔧</h2>
+    <h2>Technology Stack</h2>
     <ul>
-        <li><strong>IoT Edge Layer 🎮:</strong> Raspberry Pi devices "sniff" queue activity, requiring no staff training.</li>
-        <li><strong>AWS Cloud Backend ☁️:</strong> DynamoDB, Redis, Lambda, SageMaker, MQTT Broker for real-time, scalable processing.</li>
-        <li><strong>Frontend 🌐:</strong> Mobile-friendly website with live queue updates & M-PESA integration.</li>
+        <li><strong>IoT Edge Layer:</strong> Raspberry Pi devices track real-time queue activity.</li>
+        <li><strong>AWS Cloud Backend:</strong> DynamoDB, Redis, Lambda, SageMaker, MQTT Broker.</li>
+        <li><strong>Frontend:</strong> Mobile-friendly website, live queue updates, M-PESA integration.</li>
     </ul>
 </section>
 
 <section id="goals" class="card">
-    <h2>Our Goals 🎯</h2>
-    <p><strong>Short-Term 🚀:</strong> Pilot at Kahawa Sukari Kianjokoma Plaza with 10,000 daily users. <strong>Long-Term 🌍:</strong> Scale to 30,000+ daily users across Kenya and Africa.</p>
+    <h2>Goals</h2>
+    <p><strong>Short-Term:</strong> Pilot at Kahawa Sukari Kianjokoma Plaza with 10,000 users/day.</p>
+    <p><strong>Long-Term:</strong> Scale to 30,000+ users/day across Kenya and Africa.</p>
     <canvas id="visitorGraph" class="canvas-graph"></canvas>
 </section>
 
 <section id="simplicity" class="card">
-    <h2>Simplicity at Its Core 🌱</h2>
-    <p>Hydra is built for ease: check queue, book, arrive. Inclusive, real-time, clean interface <em>that saves hours for users ⭐⭐⭐⭐⭐</em>.</p>
+    <h2>Simplicity</h2>
+    <p>Check queue → book → arrive. Clean interface, real-time updates, inclusive for all users.</p>
 </section>
 
 <section id="advantages" class="card">
-    <h2>Advantages ✅</h2>
+    <h2>Advantages</h2>
     <ul>
-        <li>Time Savings ⏳: 80% reduction per user</li>
-        <li>Revenue 💸: KSh 35 fee per booking</li>
-        <li>Data Insights 📊: Track 30k+ daily visits</li>
-        <li>Inclusivity 🤝: No disruption, secure for all</li>
-        <li>Scalability 🌐: Plug-and-play for 1,000+ institutions</li>
+        <li>Save 2-4 hours daily per user</li>
+        <li>Revenue generation for institutions</li>
+        <li>Data-driven insights</li>
+        <li>Inclusive & secure</li>
+        <li>Scalable to 1,000+ institutions</li>
     </ul>
 </section>
 
 <section id="example" class="card example-card">
-    <h2>Real Example: Jane at Kahawa Sukari Kianjokoma Plaza 👩‍💼</h2>
+    <h2>Example: Jane</h2>
     <ol>
-        <li>📱 Checks queue: “50 people, 2.5 hrs wait”</li>
-        <li>💸 Pays KSh 35 via M-PESA, books ticket</li>
-        <li>🔔 Receives notification: “Your turn at 11:30 AM”</li>
-        <li>🚶‍♀️ Arrives, served in 5 min — saves 2.5 hours!</li>
+        <li>Checks queue: “50 people, 2.5 hrs wait”</li>
+        <li>Pays KSh 35 via M-PESA, books ticket</li>
+        <li>Notification: “Your turn at 11:30 AM”</li>
+        <li>Arrives, served in 5 minutes — saves 2.5 hours</li>
     </ol>
     <div class="project-image">
         <img src="IMG_235108.jpg" alt="Jane's journey visual">
         <p><em>This picture simplifies the entire project ⭐⭐⭐⭐⭐</em></p>
+    </div>
+    <div class="project-image">
+        <img src="IMG_234647.jpg" alt="Hydra project diagram">
+        <p><em>Visual overview of Hydra project ⭐⭐⭐⭐⭐</em></p>
+    </div>
+</section>
+
+<section id="investor" class="card investor-card">
+    <h2>For Investors</h2>
+    <p>Market potential: 30,000 daily visitors to 1,000+ Kenyan institutions. Africa-wide potential: 100M+ daily users.</p>
+    <p>Revenue model: KSh 35 fee per booking, scalable across institutions. Hardware cost per site: KSh 15,000.</p>
+    <p>Team & Traction: Solo founder (Morgan), ongoing AWS Activate submission, partnership discussions with Equity, Safaricom, Co-op.</p>
+    <p>Contact: 📧 hydra.tech.ke@gmail.com | 📞 +254 743 261 057</p>
+</section>
+
+<footer>
+    &copy; 2025 Hydra Technologies Ltd. All rights reserved.
+</footer>
+
+</body>
+</html>
