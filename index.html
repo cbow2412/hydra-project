@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Hydra - Revolutionizing Queue Management</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #e0f7fa, #f0f4f8); color: #1a2e44; line-height: 1.6; }
+        header { background: linear-gradient(90deg, #007bff, #0056b3); color: white; padding: 80px 20px; text-align: center; position: relative; overflow: hidden; }
+        header h1 { font-size: 3em; margin: 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
+        header p { font-size: 1.2em; margin: 10px 0; }
+        nav { background: #0056b3; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+        nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        nav a:hover { color: #ffca28; }
+        section { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
+        h2 { color: #007bff; text-align: center; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); padding: 30px; margin: 20px 0; }
+        .tech-card { background: #e9f7ff; border-left: 5px solid #007bff; }
+        .example-card { background: #fff3e0; border-left: 5px solid #ff9800; }
+        .investor-card { background: #f1f8e9; border-left: 5px solid #4caf50; }
+        ul, ol { padding-left: 20px; }
+        .anime-placeholder { background: #eee; height: 350px; display: flex; align-items: center; justify-content: center; margin: 20px 0; border-radius: 10px; font-style: italic; color: #666; }
+        .canvas-graph { width: 100%; height: 300px; background: #fff; border: 1px solid #ddd; margin: 20px 0; }
+        footer { background: #0056b3; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } section { padding: 20px 10px; } nav a { margin: 0 10px; } }
+        .blink { animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+    <script>
+        function drawGraph() {
+            const canvas = document.getElementById('visitorGraph');
+            if (canvas.getContext) {
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#007bff';
+                ctx.fillRect(50, 50, 100, 200); // Placeholder bar graph
+                ctx.fillStyle = '#000';
+                ctx.font = '16px Arial';
+                ctx.fillText('Visitors (30k/day)', 60, 40);
+            }
+        }
+        window.onload = drawGraph;
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Project Hydra 🚀</h1>
+        <p>Revolutionizing Queue Management in Kenya and Beyond ✨</p>
+        <div class="anime-placeholder">🌐 Animated Globe Spinning with Hydra Logo (Add During Registration)</div>
+    </header>
+
+    <nav>
+        <a href="#mission">Mission 🌟</a>
+        <a href="#technology">Technology 💻</a>
+        <a href="#goals">Goals 🎯</a>
+        <a href="#simplicity">Simplicity 🌱</a>
+        <a href="#advantages">Advantages ✅</a>
+        <a href="#example">Real Example 👩‍💼</a>
+        <a href="#investor">For Investors 💰</a>
+    </nav>
+
+    <section id="mission" class="card">
+        <h2>Our Mission 🌍</h2>
+        <p>At Hydra Technologies Ltd, a Nairobi-based startup, our mission is to eradicate the daily frustration of long queues plaguing millions. Whether at Huduma Centres, Safaricom Shops, hospitals, or banks, people lose 1-5 hours daily—time better spent with family, work, or personal growth. We aim to transform service access into a seamless, inclusive experience, starting in Kenya and scaling across Africa. Our legacy? Turning wasted hours into productivity, empowered by technology and partnerships with giants like Equity Bank and Safaricom. 🌱</p>
+    </section>
+
+    <section id="technology" class="card tech-card">
+        <h2>Our Technology Stack 🔧</h2>
+        <p>Hydra leverages a hybrid IoT-Cloud architecture, integrating effortlessly with existing ticketing systems without disruption. Here’s the deep dive:</p>
+        <ul>
+            <li><strong>IoT Edge Layer 🎮</strong>: A Raspberry Pi device, costing under KSh 15,000 per site, sits on the same subnet as ticket dispensers. It "sniffs" real-time queue activity and customer database updates, requiring no staff training or system overhauls.</li>
+            <li><strong>AWS Cloud Backend ☁️</strong>: 
+                - <em>DynamoDB</em>: Securely stores queue and user data.
+                - <em>Redis</em>: Delivers millisecond-level real-time updates.
+                - <em>Lambda</em>: Orchestrates ticket injection and payment flows.
+                - <em>SageMaker</em>: Analyzes patterns (e.g., peak hours) for optimization.
+                - <em>MQTT Broker</em>: Ensures secure, low-latency communication.
+            </li>
+            <li><strong>Middle Layer 🛠️</strong>: The FATHER Database bridges the Pi and AWS, injecting tickets via Ethernet/API extensions found in Kenyan machines.</li>
+            <li><strong>Frontend 🌐</strong>: A mobile-friendly website (https://sites.google.com/view/project-hydra/home) with future app plans, featuring live queue views and M-PESA payments (KSh 35 fee).</li>
+        </ul>
+        <p><strong>Security 🔒</strong>: End-to-end encryption protects data, with no institutional computer exposure—Pi communicates solely with the ticket database and cloud.</p>
+        <div class="anime-placeholder">🎥 Anime Flow: Watch a user book a ticket, Pi inject it, and queue update live—add this media post-registration! 🌈</div>
+    </section>
+
+    <section id="goals" class="card">
+        <h2>Our Goals 🎯</h2>
+        <p><strong>Short-Term 🚀</strong>: Launch a pilot by Dec 2025 at Kahawa Sukari Kianjokoma Plaza offices, targeting 10,000 daily users with Equity Bank and Safaricom. <strong>Long-Term 🌍</strong>: Scale to 30,000+ daily users across Kenya, then Africa, reducing wait times by 80%. We’re seeking $7,500 AWS credits to power the backend, with AWS as our scalability engine. Future hardware upgrades (e.g., from Pi to robust devices) will enhance reach.</p>
+        <canvas id="visitorGraph" class="canvas-graph"></canvas>
+        <p><em>Graph shows 30,000 daily visitors—placeholder for detailed analytics!</em></p>
+    </section>
+
+    <section id="simplicity" class="card">
+        <h2>Simplicity at Its Core 🌱</h2>
+        <p>Hydra is built for ease: a 3-step process—check queue, book, arrive. No apps needed—just a website showing "45 minutes at Huduma Centre." It’s inclusive, supporting walk-ins while digitizing for tech users. The interface is clean, with real-time updates (e.g., “Your turn in 10 mins”)—simplicity that saves time. 🌿</p>
+    </section>
+
+    <section id="advantages" class="card">
+        <h2>Advantages ✅</h2>
+        <ul>
+            <li><strong>Time Savings ⏳</strong>: 80% reduction—save 2-4 hours daily per user.</li>
+            <li><strong>Revenue for Institutions 💸</strong>: Share KSh 35 fees, advertise loans or services.</li>
+            <li><strong>Data Insights 📊</strong>: Track 30,000+ daily visits, optimize staffing.</li>
+            <li><strong>Inclusivity 🤝</strong>: No disruption, secure for all users.</li>
+            <li><strong>Scalability 🌐</strong>: Plug-and-play for 1,000+ institutions.</li>
+        </ul>
+        <p>For investors: A market of 30,000 daily Kenyan visitors, expandable to Africa’s 1.4B population, promises high ROI. 💰</p>
+    </section>
+
+    <section id="example" class="card example-card">
+        <h2>Real Example: Jane at Kahawa Sukari Kianjokoma Plaza 👩‍💼</h2>
+        <p>Meet Jane, a Nairobi mother needing a bank card replacement at Equity’s Kahawa Sukari Kianjokoma Plaza office. Typically, she’d wait 3 hours. With Hydra:</p>
+        <ol>
+            <li>📱 She checks: “Queue: 50 people, 2.5 hours wait” at 9 AM.</li>
+            <li>💸 Pays KSh 35 via M-PESA, books a ticket—injected by Pi.</li>
+            <li>🔔 Gets a notification: “Your turn at 11:30 AM.”</li>
+            <li>🚶‍♀️ Arrives at 11:20 AM, served in 5 minutes—saves 2.5 hours!</li>
+        </ol>
+        <p><strong>Stats</strong>: 5,000 monthly visitors to Kianjokoma Plaza could save 12,500 hours with Hydra. 🌟</p>
+        <div class="anime-placeholder">🎬 Anime Story: Jane’s journey—booking at home, Pi action, smooth arrival. Add images post-registration! 🌈</div>
+    </section>
+
+    <section id="investor" class="card investor-card">
+        <h2>For Investors: Why Hydra? 💰</h2>
+        <p><strong>Market Size 📈</strong>: 30,000 daily visitors to 1,000+ Kenyan institutions (e.g., 200 Huduma Centres, 200 bank branches, 600 telco shops). Africa-wide potential: 100M+ daily queue users.</p>
+        <p><strong>Revenue Model 💵</strong>: KSh 35 fee per booking = KSh 1.05M/day at 30,000 users. Institutions share 20% (KSh 210,000/day), ads add more.</p>
+        <p><strong>Costs 🛠️</strong>: KSh 15,000/site hardware, $7,500 AWS credits cover 1-year backend (free usage).</p>
+        <p><strong>Risks & Mitigation 🔐</strong>: Non-intrusive tech, encrypted security—low risk, high adoption.</p>
+        <p><strong>Team & Traction 🚀</strong>: Solo founder (Morgan), pitches to AWS ($7,500 pending Sept 2-4), Equity, Safaricom, Co-op. Registration ongoing.</p>
+        <p><strong>Ask 💸</strong>: $7,500 AWS credits, pilot partners, and investors for scaling. ROI: 10x in 2 years with 100,000 users.</p>
+        <div class="anime-placeholder">📊 Investor Animation: Revenue flow, tech diagram, growth curve—add post-registration! 🌟</div>
+        <p>Contact: 📧 hydra.tech.ke@gmail.com | 📞 +254 743 261 057</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Hydra Technologies Ltd, Nairobi, Kenya. All rights reserved. 🌐 <a href="https://sites.google.com/view/project-hydra/home" style="color: white;">Visit Site</a></p>
+    </footer>
+
+</body>
+</html>
